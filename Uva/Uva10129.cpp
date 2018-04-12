@@ -29,7 +29,7 @@ int main() {
 			int rx = find(x), ry = find(y);
 			if(rx != ry) par[rx] = ry;
 		}
-		//判断是否联通
+		
 		int root = find(s[0]-'a');
 		int flag = 1;
 		for(int i = 0; i < 26; i++) {
@@ -40,12 +40,12 @@ int main() {
 				}
 			}
 		}
-		// 判断是否满足欧拉路径的条件
+		
 		if(flag) {
 			int tol = 0, odd[2] = {0};
 			for(int i = 0; i < 26; i++) {
 				if(vis[i]) {
-					//printf("%c %d %d\n", i+'a', in[i], out[i]);
+					
 					if(in[i] != out[i]) {
 						if(tol + 1 > 2) {
 							flag = 0;
